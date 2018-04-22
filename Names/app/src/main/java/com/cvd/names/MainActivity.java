@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     EditText edittext;
     String formatFirstLetter;
     String formatRestName;
+    Button remove;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         output = (TextView) findViewById(R.id.outputName);
         name = new ArrayList<>();
-
 
 
         submit = (Button) findViewById(R.id.submit);
@@ -48,6 +49,25 @@ public class MainActivity extends AppCompatActivity {
                 input.setText("");
             }
         });
+
+        remove = (Button) findViewById(R.id.remove);
+        remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                name.remove(0);
+                output.setText("");
+                if (name.size() >  0) {
+                    remove.setEnabled(true);
+                }
+                else {
+                    remove.setEnabled(false);
+                }
+                for (int i = 0; i < name.size(); i++) {
+                    output.append((i + 1) + " " + name.get(i) + " \n");
+                }
+            }
+        });
+
 
     }
 }

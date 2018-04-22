@@ -30,6 +30,7 @@
         android:layout_centerHorizontal="true"
         android:hint="Enter Your Name"
         android:textSize="30sp"
+        android:imeOptions="actionSend"
 
 
         />
@@ -38,9 +39,16 @@
         android:id="@+id/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@id/remove"
         android:layout_centerHorizontal="true"
         android:text="Submit" />
+    <Button
+        android:id="@+id/remove"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Remove" />
 
     <ScrollView
         android:layout_width="match_parent"
