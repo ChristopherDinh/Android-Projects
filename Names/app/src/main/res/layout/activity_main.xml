@@ -30,7 +30,8 @@
         android:layout_centerHorizontal="true"
         android:hint="Enter Your Name"
         android:textSize="30sp"
-        android:imeOptions="actionSend"
+        android:maxLines="1"
+        android:singleLine="true"
 
 
         />

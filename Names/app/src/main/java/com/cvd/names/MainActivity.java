@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class MainActivity extends AppCompatActivity {
     Button submit;
     List<String> name;
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 output.setText("");
                 EditText input = (EditText) findViewById(R.id.inputName);
-                formatFirstLetter = (input.getText().toString().substring(0,1).toUpperCase());
+                formatFirstLetter = (input.getText().toString().substring(0, 1).toUpperCase());
                 formatRestName = (input.getText().toString().substring(1).toLowerCase());
                 name.add(formatFirstLetter + formatRestName);
                 for (int i = 0; i < name.size(); i++) {
@@ -56,10 +55,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 name.remove(0);
                 output.setText("");
-                if (name.size() >  0) {
+                if (name.size() > 0) {
                     remove.setEnabled(true);
-                }
-                else {
+                } else {
                     remove.setEnabled(false);
                 }
                 for (int i = 0; i < name.size(); i++) {
