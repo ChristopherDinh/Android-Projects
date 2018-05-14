@@ -2,112 +2,80 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    <TextView
-        android:id="@+id/id"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="2dip"
-        android:paddingTop="6dip"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/user"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="2dip"
-        android:textColor="@color/colorAccent" />
-    <TextView
-        android:id="@+id/pID"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="2dip"
-        android:textColor="@color/colorAccent" />
+    android:orientation="vertical"
+    >
     <TextView
         android:id="@+id/UserName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
-        android:textColor="@color/colorAccent" />
-    <TextView
-        android:id="@+id/Password"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="2dip"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:onClick="onClick"
+        android:clickable="true" />
     <TextView
         android:id="@+id/FirstName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:onClick="onClick"
+        android:clickable="true" />
     <TextView
         android:id="@+id/LastName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:onClick="onClick"
+        android:clickable="true" />
     <TextView
         android:id="@+id/PhoneNumber"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:onClick="onClick"
+        android:clickable="true" />
     <TextView
         android:id="@+id/Email"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
-        android:textColor="@color/colorAccent" />
-
+        android:textColor="@color/colorAccent"
+        android:onClick="onClick"
+        android:clickable="true" />
     <TextView
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#5d5d5d"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:onClick="onClick"
+        android:clickable="true" />
     <TextView
         android:id="@+id/justification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#5d5d5d"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/dateNeeded"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#5d5d5d"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/deliveryMode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#5d5d5d"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:onClick="onClick"
+        android:clickable="true" />
     <TextView
         android:id="@+id/status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#5d5d5d"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:onClick="onClick"
+        android:clickable="true" />
     <TextView
         android:id="@+id/total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#5d5d5d"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/submittedDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#5d5d5d"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/reasonForRejection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#5d5d5d"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:onClick="onClick"
+        android:clickable="true" />
+
 </LinearLayout>
+

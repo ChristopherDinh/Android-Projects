@@ -1,6 +1,7 @@
 package com.cvd.myapplication;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import org.json.JSONObject;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -38,10 +40,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         pr = new ArrayList<>();
-
         lv = (ListView) findViewById(R.id.list);
         new GetPurchaseRequest().execute();
     }
+    public void onClick(View v) {
+        startActivity(new Intent(getApplicationContext(), PurchaseRequestList.class));
+    }
+
     private class GetPurchaseRequest extends AsyncTask<Void, Void, Void> {
 
         @Override
@@ -75,18 +80,16 @@ public class MainActivity extends AppCompatActivity {
                     for (int i = 0; i < purchaseRequest.length(); i++) {
                         JSONObject c = purchaseRequest.getJSONObject(i);
 
-                        int Id = c.getInt("Id");
+
 
                         JSONObject User = c.getJSONObject("User");
-                        int pID = User.getInt("Id");
                         String UserName = User.getString("UserName");
                         String Password = User.getString("Password");
                         String FirstName = User.getString("FirstName");
                         String LastName = User.getString("LastName");
                         String PhoneNumber = User.getString("PhoneNumber");
                         String Email = User.getString("Email");
-                        boolean Reviewer = User.getBoolean("Reviewer");
-                        boolean Admin = User.getBoolean("Admin");
+
 
                         String Description = c.getString("Description");
                         String Justification = c.getString("Justification");
@@ -94,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
                         String DeliveryMode = c.getString("DeliveryMode");
                         String Status = c.getString("Status");
                         String Total = c.getString("Total");
-                        String SubmittedDate = c.getString("SubmittedDate");
                         String ReasonForRejection = c.getString("ReasonForRejection");
 
 
@@ -156,9 +158,9 @@ public class MainActivity extends AppCompatActivity {
              * Updating parsed JSON data into ListView
              * */
             ListAdapter adapter = new SimpleAdapter(
-                    MainActivity.this, pr, R.layout.list_items, new String[]
-                    {"UserName", "Password", "FirstName","LastName", "PhoneNumber","Email","Description","Justification","DateNeeded","DeliveryMode","Status","SubmittedDate"},
-                    new int[]{R.id.UserName, R.id.Password, R.id.FirstName, R.id.LastName,R.id.PhoneNumber, R.id.Email, R.id.description, R.id.justification, R.id.dateNeeded});
+                    MainActivity.this, pr, R.layout.list_items,
+                    new String[] {"UserName", "FirstName","LastName", "PhoneNumber","Email","Description","Justification","Status","Total"},
+                    new int[]{R.id.UserName, R.id.FirstName, R.id.LastName,R.id.PhoneNumber, R.id.Email, R.id.description, R.id.justification, R.id.status, R.id.total});
 
             lv.setAdapter(adapter);
         }
