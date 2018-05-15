@@ -3,6 +3,7 @@ package com.cvd.purchaserequestsystem;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ListAdapter;
@@ -27,14 +28,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static com.cvd.purchaserequestsystem.MainActivity.EXTRA_DESCRIPTION;
-import static com.cvd.purchaserequestsystem.MainActivity.EXTRA_STATUS;
-import static com.cvd.purchaserequestsystem.MainActivity.EXTRA_TOTAL;
 
 public class Detail extends AppCompatActivity {
     RecyclerView recyclerView;
     PrliAdapter PrliAdapter;
-    List<Prli> PrliList;
+    ArrayList<Prli> PrliList;
     RequestQueue requestQueue;
 
 
@@ -44,6 +42,8 @@ public class Detail extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+
         recyclerView = (RecyclerView) findViewById(R.id.detailView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -51,6 +51,8 @@ public class Detail extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
         parseJSON();
 
+        Intent intent = getIntent();
+        String id = intent.getStringExtra("prListID");
     }
     private void parseJSON() {
         String url = "http://10.0.2.2:8080/PurchaseRequestLineItems/List";
@@ -119,7 +121,7 @@ public class Detail extends AppCompatActivity {
 
                         Double lineTotal = quantity * price;
 
-                        PrliList.add(new Prli(name, quantity, price, lineTotal));
+                        PrliList.add(new Prli(name, quantity, price, lineTotal, prId));
 
                     }
                     PrliAdapter = new PrliAdapter(Detail.this, PrliList);
@@ -142,5 +144,6 @@ public class Detail extends AppCompatActivity {
 
 
     }
+
 
 }

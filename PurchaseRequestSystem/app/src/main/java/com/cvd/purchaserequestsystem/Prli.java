@@ -5,12 +5,22 @@ public class Prli {
     private int quantity;
     private double price;
     private double lineTotal;
+    int prliID;
 
-    public Prli(String product, int quantity, double price, double lineTotal) {
+    public Prli(String product, int quantity, double price, double lineTotal, int prliID) {
         this.product = product;
         this.quantity = quantity;
         this.price = price;
         this.lineTotal = lineTotal;
+        this.prliID = prliID;
+    }
+
+    public int getPrliID() {
+        return prliID;
+    }
+
+    public void setPrliID(int prliID) {
+        this.prliID = prliID;
     }
 
     public String getProduct() {

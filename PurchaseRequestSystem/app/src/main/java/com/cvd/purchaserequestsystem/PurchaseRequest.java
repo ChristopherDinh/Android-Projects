@@ -24,11 +24,11 @@ import java.util.Date;
                 this.justification = justification;
                 this.status = status;
                 this.total = total;
-                UserName = userName;
-                FirstName = firstName;
-                LastName = lastName;
-                PhoneNumber = phoneNumber;
-                Email = email;
+                this.UserName = userName;
+                this.FirstName = firstName;
+                this.LastName = lastName;
+                this.PhoneNumber = phoneNumber;
+                this.Email = email;
             }
 
             public int getId() {
