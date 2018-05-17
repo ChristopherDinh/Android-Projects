@@ -36,6 +36,7 @@ public class Detail extends AppCompatActivity {
     RequestQueue requestQueue;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,7 +112,7 @@ public class Detail extends AppCompatActivity {
                         Boolean preapproved = v.getBoolean("PreApproved");
                         String summary = v.getString("Summary");
 
-                        String vendorPartNumber = p.getString("VendorPartNumber");
+                        //String PartNumber = p.getString("PartNumber");
                         String name = p.getString("Name");
                         Double price = p.getDouble("Price");
                         String unit = p.getString("Unit");

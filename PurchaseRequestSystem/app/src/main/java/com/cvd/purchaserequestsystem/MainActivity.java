@@ -54,12 +54,6 @@ public class MainActivity extends AppCompatActivity implements PurchaseRequestAd
 
     private void parseJSON() {
         String url = "http://10.0.2.2:8080/PurchaseRequests/List";
-        String username = "dinher";
-        String password = "time";
-
-        EditText mUsername;
-        //username = mUsername.getText().toString();
-        String login = "http://10.0.2.2/Users/Authenticate?uName=" + username + "&password=" + password;
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override

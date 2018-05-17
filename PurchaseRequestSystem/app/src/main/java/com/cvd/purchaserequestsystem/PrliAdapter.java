@@ -21,6 +21,7 @@ public class PrliAdapter extends RecyclerView.Adapter<PrliAdapter.PrliHolder> {
     private ArrayList<Prli> prliList;
     private ArrayList<Prli> prliList2;
     public static int primaryId;
+    CardView cardView;
 
     public PrliAdapter(Context context, ArrayList<Prli> prliList) {
         this.mContext = context;
@@ -37,14 +38,11 @@ public class PrliAdapter extends RecyclerView.Adapter<PrliAdapter.PrliHolder> {
     @Override
     public void onBindViewHolder(@NonNull PrliHolder holder, int position) {
         Prli pr = prliList.get(position);
-
         String name = pr.getProduct();
         int quantity = pr.getQuantity();
         double price = pr.getPrice();
         double lineTotal = pr.getLineTotal();
         int id = pr.getPrliID();
-
-
 
         String formattedPrice = NumberFormat.getCurrencyInstance().format(price);
         String formattedLineTotal = NumberFormat.getCurrencyInstance().format(lineTotal);
@@ -62,10 +60,10 @@ public class PrliAdapter extends RecyclerView.Adapter<PrliAdapter.PrliHolder> {
                 holder.textViewLineTotal.setVisibility(View.VISIBLE);
             } else {
                 holder.layout.setVisibility(View.GONE);
-                holder.textViewProduct.setVisibility(View.INVISIBLE);
-                holder.textViewPrice.setVisibility(View.INVISIBLE);
-                holder.textViewQuantity.setVisibility(View.INVISIBLE);
-                holder.textViewLineTotal.setVisibility(View.INVISIBLE);
+                holder.textViewProduct.setVisibility(View.GONE);
+                holder.textViewPrice.setVisibility(View.GONE);
+                holder.textViewQuantity.setVisibility(View.GONE);
+                holder.textViewLineTotal.setVisibility(View.GONE);
             }
         }
     }
