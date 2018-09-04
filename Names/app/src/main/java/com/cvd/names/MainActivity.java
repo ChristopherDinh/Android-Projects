@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     TextView output;
     EditText edittext;
     String formatFirstLetter;
-    String formatRestName;
+    String formatName;
     Button remove;
 
 
@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 output.setText("");
                 EditText input = (EditText) findViewById(R.id.inputName);
                 formatFirstLetter = (input.getText().toString().substring(0, 1).toUpperCase());
-                formatRestName = (input.getText().toString().substring(1).toLowerCase());
-                name.add(formatFirstLetter + formatRestName);
+                formatName = (input.getText().toString().substring(1).toLowerCase());
+                name.add(formatFirstLetter + formatName);
                 for (int i = 0; i < name.size(); i++) {
                     output.append((i + 1) + " " + name.get(i) + " \n");
                 }
